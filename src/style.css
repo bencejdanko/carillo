@@ -32,6 +32,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -47,20 +48,8 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-#ro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
 
 .navigator {
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -75,19 +64,21 @@ h1 {
   position: fixed;
   display: grid;
   grid-template-rows: 50px 1fr;
-  top: 50px; /* height of the navigator */
+  top: 50px;
+  /* height of the navigator */
   left: 0;
   width: 100px;
-  height: calc(100vh - 50px); /* subtract the height of the navigator */
+  height: calc(100vh - 50px);
+  /* subtract the height of the navigator */
   border-right: 1px solid var(--theme-fg0);
 }
 
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 0,
-  'wght' 100,
-  'GRAD' 0,
-  'opsz' 24
+    'FILL' 0,
+    'wght' 100,
+    'GRAD' 0,
+    'opsz' 24
 }
 
 button {
@@ -110,30 +101,102 @@ button {
   align-items: center;
 }
 
-.customer {
-
-  margin-top: 60px;
+.info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--theme-fg0);
-  border-radius: 10px;
-  width: 200px;
-  height: 200px;
+  grid-template-columns: 100px 1fr;
+  width: 100%;
+  height: 100%;
+}
 
+.impression {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .portrait {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 1px solid var(--theme-fg0);
+  border-radius: 40px;
+}
+
+.car-portrait {
+  width: 100%;
   object-fit: cover;
   border: 1px solid var(--theme-fg0);
   border-radius: 40px;
 }
 
 .customer-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.terminal {
+  display: grid;
+  grid-template-areas: 
+    "header   info  info    info      info  info"
+    "form     form    form    timer     car   car"
+    "form     form    form    timer     car   car"
+
+    "form     form    form    timer   notes notes"
+    "form     form    form    advisor notes notes"
+    "form     form    form    parts   progress progress"
+    "form     form    form    manage  progress progress";
+
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 100px);
+  grid-gap: 10px
+}
+
+.terminal > * {
+  background-color: var(--theme-bg2);
+  border: 1px solid var(--theme-fg0);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.info {
+  grid-area: info;
+}
+
+.form {
+  grid-area: form;
+}
+
+.car {
+  grid-area: car;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+
+}
+
+.timer {
+  grid-area: timer;
+}
+
+.notes {
+  grid-area: notes;
+}
+
+.parts {
+  grid-area: parts;
+}
+
+.progress {
+  grid-area: progress;
+}
+
+.manage {
+  grid-area: manage;
+}
+
+.advisor {
+  grid-area: advisor;
 }
