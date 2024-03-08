@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node index.ts",
+    "test": "test"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "duckdb": "^0.10.0",
+    "duckdb-async": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25"
+  }
+}
