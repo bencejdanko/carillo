@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "node index.ts",
+    "start": "node main.ts",
     "test": "test"
   },
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
     "duckdb": "^0.10.0",
-    "duckdb-async": "^0.10.0"
+    "duckdb-async": "^0.10.0",
+    "express": "^4.18.3"
   },
   "devDependencies": {
     "@types/node": "^20.11.25"
