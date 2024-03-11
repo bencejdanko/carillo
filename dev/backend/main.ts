@@ -3,6 +3,8 @@ const app = express()
 
 const db = require('./db.ts')
 
+const aw_sdk = require('node-appwrite')
+
 
 var testingdb = null
 
