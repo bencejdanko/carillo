@@ -1,14 +1,13 @@
-## Requirements:
+## backend
 
-- Docker ~500mb
-- Appwrite ~250mb
+install pocketbase binaries
+./run.sh [--clear]
 
-### Authentication
-- Appwrite Auth
-    - https://appwrite.io/docs/products/auth/quick-start
+## frontend
 
-### Backend
-- Nodejs
+npm run dev
 
+## mobile
 
-### Frontend
+npm start -- --tunnel
+Expo Go
