@@ -9,4 +9,4 @@ if [ "$1" == "--clear" ]; then
 fi
 
 echo "Starting PocketBase..."
-./pocketbase serve --dev --http="172.24.58.18:8090"
+./pocketbase serve --dev --http="192.168.0.177:8090"
