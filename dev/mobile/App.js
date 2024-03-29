@@ -5,7 +5,7 @@ import PocketBase from 'pocketbase';
 
 export default function App() {
 
-  const pb = new PocketBase('http://192.168.0.177:8090/');
+  const pb = new PocketBase('http://' + process.env.IP_ADDRESS + ':8090/');
 
   const [pbHealth, setPbHealth] = useState('');
   const [email, setEmail] = useState('');
