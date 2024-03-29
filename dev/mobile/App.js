@@ -5,7 +5,7 @@ import PocketBase from 'pocketbase';
 
 export default function App() {
 
-  const pb = new PocketBase('http://127.0.0.1:8090/');
+  const pb = new PocketBase('http://172.24.58.18:8090/');
 
   const [pbHealth, setPbHealth] = useState('');
   const [email, setEmail] = useState('');
@@ -16,7 +16,7 @@ export default function App() {
       setEmail(res.testing)
     } catch (error) {
       console.log(error.originalError)
-      setEmail('Error');
+      setEmail("" + error.originalError);
     }
     await handleGetHealth();
   }
@@ -27,7 +27,7 @@ export default function App() {
       console.log(res)
     } catch (error) {
       console.log(error.originalError)
-      setPbHealth('Error');
+      setPbHealth("" + error.originalError);
     }
   }
 
