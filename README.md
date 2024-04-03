@@ -11,3 +11,6 @@ npm run dev
 
 npm start -- --tunnel
 Expo Go
+
+## risky dep:
+https://github.com/kruschid/refine-pocketbase
