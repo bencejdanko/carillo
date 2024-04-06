@@ -2,6 +2,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+import PocketBase from 'pocketbase';
+
 import Signin from './Screens/Signin';
 import MyGarage from './Screens/MyGarage';
 import Schedule from './Screens/Schedule';
@@ -17,7 +19,7 @@ export default function App() {
 
   const handleGetTest = async () => {
     try {
-      const res = await pb.collection('test').getOne("37t3f7exqseru0p", {isAbort: false});
+      const res = await pb.collection('repairOrders').getOne("37t3f7exqseru0p", {isAbort: false});
       setEmail(res.testing)
     } catch (error) {
       console.log(error.originalError)
