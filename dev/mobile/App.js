@@ -5,6 +5,7 @@ import PocketBase from 'pocketbase';
 import Signin from './Screens/Signin';
 import MyGarage from './Screens/MyGarage';
 import Schedule from './Screens/Schedule';
+import PocketBase from 'pocketbase';
 
 const Stack = createNativeStackNavigator();
 
