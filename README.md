@@ -24,7 +24,7 @@
    - Add it to your enviroment variables
    - To make sure it is installed, run `npm -v` and make sure you get the version number
 
-2. Navigate to /dev/frontend and run `npm i`
+2. Navigate to /dev/mobile and run `npm i`
 
 3. Type `npm start -- --tunnel`
    - agree to the initial install
