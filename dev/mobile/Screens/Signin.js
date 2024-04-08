@@ -21,7 +21,6 @@ export default function Signin({ navigation }) {
 
 
                     <Text style={{
-                        fontSize: '30',
                         paddingTop: 50,
                         paddingLeft: 10,
                     }

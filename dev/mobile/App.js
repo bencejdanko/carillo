@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -7,6 +7,7 @@ import PocketBase from 'pocketbase';
 import Signin from './Screens/Signin';
 import MyGarage from './Screens/MyGarage';
 import Schedule from './Screens/Schedule';
+import PocketBase from 'pocketbase';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,7 +45,6 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Signin" component={Signin} />
         <Stack.Screen name="MyGarage" component={MyGarage} />
-        <Stack.Screen name="Schedule" component={Schedule} />
       </Stack.Navigator>
     </NavigationContainer>
   );
