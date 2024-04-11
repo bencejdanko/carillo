@@ -1,0 +1,47 @@
+.gradient-container {
+    width: 500px;
+    font-size: 900;
+    text-align: left;
+}
+
+/* Background Gradient */
+.gradient-background {
+    background: linear-gradient(90deg,
+            #4169e1,
+            #5768df,
+            #8164d7,
+            #aa60c8,
+            #cc60b3,
+            #e3689c,
+            #ed7889,
+            #ee8c7e,
+            #e99e7c,
+            #e4ac7f,
+            #e0b585,
+            #deb887,
+            orange);
+    background-size: 200%;
+    /* Background Text Clip */
+    /* webkit vendor prefix start */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* webkit vendor prefix end */
+    background-clip: text;
+    animation: gradient-text-animation 3s alternate infinite;
+    /* -webkit-animation: gradient-text-animation 3s alternate infinite; */
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-text-animation {
+    from {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    to {
+        background-position: 0 50%;
+    }
+}
