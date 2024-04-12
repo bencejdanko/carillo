@@ -1,12 +1,6 @@
 <script lang="ts">
     import IndexNav from "$lib/components/IndexNav.svelte";
-    import * as Accordion from "$lib/components/ui/accordion";
     import * as Card from "$lib/components/ui/card";
-    import * as Avatar from "$lib/components/ui/avatar";
-    import * as Carousel from "$lib/components/ui/carousel/index.js";
-
-    import { Root } from "postcss";
-    import { EMPTY_PATH } from "zod";
 </script>
 
 <main>
