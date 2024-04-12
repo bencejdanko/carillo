@@ -52,3 +52,13 @@
         background-position: 0 50%;
     }
 }
+
+.card-link {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    display: block;
+}
+
+.body {
+    background: linear-gradient(to right, #abcdef, #123456); /* Replace with your colors */
+}
