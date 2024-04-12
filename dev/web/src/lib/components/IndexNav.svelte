@@ -9,7 +9,7 @@
         <Menubar.Menu >
             <Menubar.Item class="text-lg font-bold italic">CAR-RILLO</Menubar.Item>
 
-            <Menubar.Item class="text-lg"
+            <!-- <Menubar.Item class="text-lg"
                 ><HoverCard.Root>
                     <HoverCard.Trigger>Products</HoverCard.Trigger>
                     <HoverCard.Content>
@@ -48,7 +48,7 @@
                         SvelteKit - Web development, streamlined
                     </HoverCard.Content>
                 </HoverCard.Root></Menubar.Item
-            >
+            > -->
 
             <!-- <Menubar.Item class="text-lg justify-self-right p-2 ">
                 <Button class='p-2 bg-none'>Contact Us
