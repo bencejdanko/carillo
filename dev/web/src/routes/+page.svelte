@@ -6,54 +6,62 @@
     import * as Carousel from "$lib/components/ui/carousel/index.js";
 </script>
 
+<link rel="stylesheet" href="styles.css" />
+
 <style>
     @media (max-width: 768px) {
         .big-title {
-            font-size: 1.25rem; /* Smaller font size for mobile */
-            padding: 0 1rem; /* Add padding to prevent text from touching the edges */
+            font-size: 1.25rem;
+            padding: 0 1rem;
         }
         .card-grid {
-            grid-template-columns: repeat(1, 1fr); /* Single column layout for cards on mobile */
+            grid-template-columns: repeat(1, 1fr); 
         }
         .responsive-text {
-            font-size: 0.875rem; /* Smaller text for better readability on mobile */
-            line-height: 1.25rem; /* Increased line height for better text spacing */
-            padding: 0 1rem; /* Add padding to prevent text from touching the edges */
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            padding: 0 1rem;
         }
         .padded-container {
-            padding: 0 1rem; /* Ensuring consistent padding across all mobile containers */
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        .full-width {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
     }
 </style>
 
-<main>
+<main class="full-width">
     <IndexNav />
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-        <div class="bg-gradient-to-r from-cyan-500 to-blue-500 p-5 rounded-lg shadow-lg padded-container">
-            <h1 class="text-xl md:text-5xl big-title">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 full-width">
+        <div class="bg-gradient-to-r from-cyan-500 to-blue-500 p-5 rounded-lg shadow-lg padded-container full-width">
+            <h1 class="text-xl md:text-5xl big-title full-width">
                 Driving Efficiency, Powering Performance: Your Dealership's
                 Ultimate Service Solution
             </h1>
         </div>
 
-        <div class="flex justify-center items-center padded-container">
-            <img src="/logo.png" alt="logo" class="max-w-full h-auto" />
+        <div class="flex justify-center items-center padded-container full-width">
+            <img src="/logo.png" alt="logo" class="max-w-full h-auto full-width" />
         </div>
     </div>
 
-    <h2 class="responsive-text text-sm md:text-lg font-medium text-gray-600 p-5">
+    <h2 class="responsive-text text-sm md:text-lg font-medium text-gray-600 p-5 full-width">
         One simple login for your entire service pipeline. Car-Rillo is poised
         to revolutionize the way automotive dealerships manage their service
         operations. A comprehensive, end-to-end platform that streamlines the
         entire vehicle servicing process.
     </h2>
 
-    <div class="p-5 grid card-grid grid-cols-2 md:grid-cols-4 gap-5">
+    <div class="p-5 grid card-grid grid-cols-2 md:grid-cols-4 gap-5 full-width">
         {#each [{ name: "Shawheen Wingrove", email: "shawheen@wingrove.org", linkedin: 'https://www.linkedin.com/in/shawheenw/' }, { name: "Clayton Carrillo", linkedin: "www.linkedin.com/in/clayton-carrillo-822bb1264" }, { name: "影尘 白(David)", email: "crysisbai2001@gmail.com", linkedin: 'https://www.linkedin.com/in/yingchen-bai/' }, { name: "Robert Schacherbauer", email: 'robert.schacherbauer@sjsu.edu' }, { name: "Sohan Bairaboina" }, { name: "Bence Danko", email: "bence.danko@sjsu.edu", linkedin: 'https://www.linkedin.com/in/bence-jordan-danko/' }, { name: "Trung Tran", email: "trungtran63470@gmail.com", linkedin: "https://www.linkedin.com/in/trung-tran1234/" }] as { name, email, linkedin }}
-            <Card.Root class="relative shadow-lg p-2 rounded-lg padded-container">
+            <Card.Root class="relative shadow-lg p-2 rounded-lg padded-container full-width">
                 <Card.Title>{name}</Card.Title>
-                <Card.Content class="p-2">
+                <Card.Content class="p-2 full-width">
                     {#if email}
                         <p>{email}</p>
                     {/if}
