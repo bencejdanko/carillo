@@ -3,7 +3,7 @@
     import * as Card from "$lib/components/ui/card";
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css" />
 <main>
     <IndexNav />
 
@@ -52,7 +52,28 @@
     border-b-[400px] border-b-transparent"
     ></div> -->
 
-    <div class="grid grid-cols-2 justify-center">
+
+    <style>
+        @media (min-width: 768px) {
+            .banner-above-threshold {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-below-threshold {
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+            }
+        }
+
+
+    </style>
+
+    <div class="banner-above-threshold">
         <div class="gradient-container m-5">
             <div class="gradient-background">
                 <h1 class="text-5xl">
@@ -61,11 +82,10 @@
                 </h1>
             </div>
         </div>
-      
-        <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="/logo.png" alt="logo" />
-</div>
 
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="/logo.png" alt="logo" />
+        </div>
     </div>
 
     <h2 class="h2 m-5 text-lg font-medium text-[gray] relative w-[50%]">
@@ -78,25 +98,28 @@
     <Card.Root class="m-5 p-5 self-bottom">
         <Card.Title>Our Team</Card.Title>
 
-        <div class="grid grid-cols-4 p-5 gap-5">
-            {#each [{ name: "Shawheen Wingrove", email: "shawheen@wingrove.org", linkedin: "https://www.linkedin.com/in/shawheenw/" }, { name: "Clayton Carrillo", linkedin: "www.linkedin.com/in/clayton-carrillo-822bb1264" }, { name: "影尘 白(David)", email: "crysisbai2001@gmail.com", linkedin: "https://www.linkedin.com/in/yingchen-bai/" }, { name: "Robert Schacherbauer", email: "robert.schacherbauer@sjsu.edu" }, { name: "Sohan Bairaboina", email: 'Sohanb152@gmail.com' }, { name: "Bence Danko", email: "bence.danko@sjsu.edu", linkedin: "https://www.linkedin.com/in/bence-jordan-danko/" }, { name: "Trung Tran", email: "trungtran63470@gmail.com", linkedin: "https://www.linkedin.com/in/trung-tran1234/" }] as { name, email, linkedin }}
+        <div class="grid grid-cols-4 p-5 gap-5 team-below-threshold">
+            {#each [{ name: "Shawheen Wingrove", email: "shawheen@wingrove.org", linkedin: "https://www.linkedin.com/in/shawheenw/" }, { name: "Clayton Carrillo", linkedin: "www.linkedin.com/in/clayton-carrillo-822bb1264" }, { name: "影尘 白(David)", email: "crysisbai2001@gmail.com", linkedin: "https://www.linkedin.com/in/yingchen-bai/" }, { name: "Robert Schacherbauer", email: "robert.schacherbauer@sjsu.edu" }, { name: "Sohan Bairaboina", email: "Sohanb152@gmail.com" }, { name: "Bence Danko", email: "bence.danko@sjsu.edu", linkedin: "https://www.linkedin.com/in/bence-jordan-danko/" }, { name: "Trung Tran", email: "trungtran63470@gmail.com", linkedin: "https://www.linkedin.com/in/trung-tran1234/" }] as { name, email, linkedin }}
                 <Card.Root class="p-2 relative">
                     <Card.Title>{name}</Card.Title>
                     <Card.Content class="p-2">
-                        <!-- <Avatar.Image src="cc.JPG" /> -->
-                        {#if email}
-                            <b>Email:</b>
-                            {email}
-                        {/if}
+                        <div style="overflow: auto;">
+                            <!-- <Avatar.Image src="cc.JPG" /> -->
+                            {#if email}
+                                <b>Email:</b>
+                                {email}
+                            {/if}
 
-                        {#if linkedin}
-                            <b>LinkedIn:</b>
-                            {linkedin}
-                        {/if}
+                            {#if linkedin}
+                                <b>LinkedIn:</b>
+                                {linkedin}
+                            {/if}
+                        </div>
                     </Card.Content>
                 </Card.Root>
             {/each}
         </div>
+
     </Card.Root>
 
     <script lang="ts">
