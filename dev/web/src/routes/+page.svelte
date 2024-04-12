@@ -1,7 +1,12 @@
-<script>
+<script lang="ts">
     import IndexNav from "$lib/components/IndexNav.svelte";
     import * as Accordion from "$lib/components/ui/accordion";
+    import * as Card from "$lib/components/ui/card";
+    import * as Avatar from "$lib/components/ui/avatar";
+    import * as Carousel from "$lib/components/ui/carousel/index.js";
 
+    import { Root } from "postcss";
+    import { EMPTY_PATH } from "zod";
 </script>
 
 <link rel="stylesheet" href="/styles.css" />
@@ -9,7 +14,7 @@
 <main>
     <IndexNav />
 
-    <div
+    <!-- <div
         class="w-[200px] h-[400px] absolute m-2"
         style="
         left: 50%;
@@ -37,30 +42,69 @@
         width: 80%;
     "
             >
-            <Accordion.Root>
-                <Accordion.Item value="item-1">
-                  <Accordion.Trigger>GRX</Accordion.Trigger>
-                  <Accordion.Content>
-                  </Accordion.Content>
-                </Accordion.Item>
-              </Accordion.Root>
+                <Accordion.Root>
+                    <Accordion.Item value="item-1">
+                        <Accordion.Trigger>GRX</Accordion.Trigger>
+                        <Accordion.Content></Accordion.Content>
+                    </Accordion.Item>
+                </Accordion.Root>
             </div>
+        </div>
+    </div> -->
+
+    <!-- <div
+        class="absolute w-screen h-0
+    border-t-[0px] border-t-transparent
+    border-r-[700px] border-r-[#55c280] border-opacity-40
+    border-b-[400px] border-b-transparent"
+    ></div> -->
+
+    <div class="grid grid-cols-2">
+        <div class="gradient-container m-5">
+            <div class="gradient-background">
+                <h1 class="text-5xl">
+                    Driving Efficiency, Powering Performance: Your Dealership's
+                    Ultimate Service Solution
+                </h1>
+            </div>
+        </div>
+
+        <div class=''>
+            <img src="/logo.png" alt="logo" class=" justify-center" />
         </div>
     </div>
 
-    <div
-        class="absolute w-screen h-0
-    border-t-[0px] border-t-transparent
-    border-r-[700px] border-r-[#ee8c7e] border-opacity-40
-    border-b-[400px] border-b-transparent"
-    >
-        <div class="grid grid-col-2">
-            <div class="gradient-container m-5">
-                <div class="gradient-background">
-                    <h1 class="text-8xl">Driving Efficiency, Powering Performance: Your Dealership's Ultimate Service Solution</h1>
-                </div>
-            </div>
+    <h2 class="h2 m-5 text-lg font-medium text-[gray] relative w-[50%]">
+        One simple login for your entire service pipeline. Car-Rillo is poised
+        to revolutionize the way automotive dealerships manage their service
+        operations. A comprehensive, end-to-end platform that streamlines the
+        entire vehicle servicing process.
+    </h2>
+
+    <Card.Root class="m-5 p-5 self-bottom">
+        <Card.Title>Our Team</Card.Title>
+
+        <div class="grid grid-cols-4 p-5 gap-5">
+            {#each [{ name: "Shawheen Wingrove", email: "shawheen@wingrove.org", linkedin: 'https://www.linkedin.com/in/shawheenw/' }, { name: "Clayton Carrillo", linkedin: "www.linkedin.com/in/clayton-carrillo-822bb1264" }, { name: "影尘 白(David)", email: "crysisbai2001@gmail.com", linkedin: 'https://www.linkedin.com/in/yingchen-bai/' }, { name: "Robert Schacherbauer", email: 'robert.schacherbauer@sjsu.edu' }, { name: "Sohan Bairaboina" }, { name: "Bence Danko", email: "bence.danko@sjsu.edu", linkedin: 'https://www.linkedin.com/in/bence-jordan-danko/' }, { name: "Trung Tran", email: "trungtran63470@gmail.com", linkedin: "https://www.linkedin.com/in/trung-tran1234/" }] as { name, email, linkedin }}
+                <Card.Root class="p-2 relative">
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Content class="p-2">
+                        <!-- <Avatar.Image src="cc.JPG" /> -->
+                        {#if email}
+                            {email}
+                        {/if}
+
+                        {#if linkedin}
+                            {linkedin}
+                        {/if}
+                    </Card.Content>
+                </Card.Root>
+            {/each}
         </div>
-        <h2 class="h2 m-5 text-lg">Streamline your service pipeline</h2>
-    </div>
+    </Card.Root>
+
+    <script lang="ts">
+        import * as Card from "$lib/components/ui/card/index.js";
+        import * as Carousel from "$lib/components/ui/carousel/index.js";
+    </script>
 </main>

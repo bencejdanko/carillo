@@ -7,7 +7,14 @@
 /* Background Gradient */
 .gradient-background {
     background: linear-gradient(90deg,
-            #4169e1,
+
+            #069e78,
+            #067928,
+            #0c7386,
+            #55c280,
+            #209e3b);
+
+            /* #4169e1,
             #5768df,
             #8164d7,
             #aa60c8,
@@ -19,7 +26,7 @@
             #e4ac7f,
             #e0b585,
             #deb887,
-            orange);
+            orange); */
     background-size: 200%;
     /* Background Text Clip */
     /* webkit vendor prefix start */
