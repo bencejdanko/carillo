@@ -57,7 +57,7 @@
         <div class="grid grid-col-2">
             <div class="gradient-container m-5">
                 <div class="gradient-background">
-                    <h1 class="text-8xl">Connecting Dealerships and Users</h1>
+                    <h1 class="text-8xl">Driving Efficiency, Powering Performance: Your Dealership's Ultimate Service Solution</h1>
                 </div>
             </div>
         </div>
