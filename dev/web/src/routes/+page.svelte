@@ -59,7 +59,7 @@
     border-b-[400px] border-b-transparent"
     ></div> -->
 
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 justify-center">
         <div class="gradient-container m-5">
             <div class="gradient-background">
                 <h1 class="text-5xl">
@@ -69,8 +69,8 @@
             </div>
         </div>
 
-        <div class=''>
-            <img src="/logo.png" alt="logo" class=" justify-center" />
+        <div class="justify-center">
+            <img src="/logo.png" alt="logo" class="justify-center" />
         </div>
     </div>
 
@@ -85,16 +85,18 @@
         <Card.Title>Our Team</Card.Title>
 
         <div class="grid grid-cols-4 p-5 gap-5">
-            {#each [{ name: "Shawheen Wingrove", email: "shawheen@wingrove.org", linkedin: 'https://www.linkedin.com/in/shawheenw/' }, { name: "Clayton Carrillo", linkedin: "www.linkedin.com/in/clayton-carrillo-822bb1264" }, { name: "影尘 白(David)", email: "crysisbai2001@gmail.com", linkedin: 'https://www.linkedin.com/in/yingchen-bai/' }, { name: "Robert Schacherbauer", email: 'robert.schacherbauer@sjsu.edu' }, { name: "Sohan Bairaboina" }, { name: "Bence Danko", email: "bence.danko@sjsu.edu", linkedin: 'https://www.linkedin.com/in/bence-jordan-danko/' }, { name: "Trung Tran", email: "trungtran63470@gmail.com", linkedin: "https://www.linkedin.com/in/trung-tran1234/" }] as { name, email, linkedin }}
+            {#each [{ name: "Shawheen Wingrove", email: "shawheen@wingrove.org", linkedin: "https://www.linkedin.com/in/shawheenw/" }, { name: "Clayton Carrillo", linkedin: "www.linkedin.com/in/clayton-carrillo-822bb1264" }, { name: "影尘 白(David)", email: "crysisbai2001@gmail.com", linkedin: "https://www.linkedin.com/in/yingchen-bai/" }, { name: "Robert Schacherbauer", email: "robert.schacherbauer@sjsu.edu" }, { name: "Sohan Bairaboina", email: 'Sohanb152@gmail.com' }, { name: "Bence Danko", email: "bence.danko@sjsu.edu", linkedin: "https://www.linkedin.com/in/bence-jordan-danko/" }, { name: "Trung Tran", email: "trungtran63470@gmail.com", linkedin: "https://www.linkedin.com/in/trung-tran1234/" }] as { name, email, linkedin }}
                 <Card.Root class="p-2 relative">
                     <Card.Title>{name}</Card.Title>
                     <Card.Content class="p-2">
                         <!-- <Avatar.Image src="cc.JPG" /> -->
                         {#if email}
+                            <b>Email:</b>
                             {email}
                         {/if}
 
                         {#if linkedin}
+                            <b>LinkedIn:</b>
                             {linkedin}
                         {/if}
                     </Card.Content>
