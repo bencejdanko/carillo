@@ -9,8 +9,6 @@
     import { EMPTY_PATH } from "zod";
 </script>
 
-<link rel="stylesheet" href="/styles.css" />
-
 <main>
     <IndexNav />
 
@@ -69,9 +67,10 @@
             </div>
         </div>
 
-        <div class=''>
-            <img src="/logo.png" alt="logo" class=" justify-center" />
-        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="/logo.png" alt="logo" />
+</div>
+
     </div>
 
     <h2 class="h2 m-5 text-lg font-medium text-[gray] relative w-[50%]">
