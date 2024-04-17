@@ -1,7 +1,12 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Schedule from './Schedule';
+
 
 export default function MyGarageScreen() {
+  const navigation = useNavigation(); 
   const cars = [
     {
       id: 1,
@@ -34,6 +39,11 @@ export default function MyGarageScreen() {
                 <Text style={styles.mileageLabel}>mileage:</Text>
                 <Text style={styles.mileage}>{car.mileage}</Text>
               </View>
+              <TouchableOpacity
+                style={styles.settingsButton}
+                onPress={() => navigation.navigate('CarDetails')}>
+                <Icon name="cog" size={24} color="#FFFFFF" />
+              </TouchableOpacity>
             </View>
           ))}
 
@@ -44,19 +54,24 @@ export default function MyGarageScreen() {
       </ScrollView>
 
       <View style={styles.tabBar}>
-        <TouchableOpacity style={styles.tabItem}>
+        <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('MyGarage')}>
+          <Icon name="car" size={20} color="#FFFFFF" />
           <Text style={styles.tabText}>MyGarage</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabItem}>
+        <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('CarDetails')}>
+          <Icon name="list-alt" size={20} color="#FFFFFF" />
           <Text style={styles.tabText}>Details</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabItem}>
+        <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('ServiceSummary')}>
+          <Icon name="history" size={20} color="#FFFFFF" />
           <Text style={styles.tabText}>History</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabItem}>
+        <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('Schedule')}>
+          <Icon name="calendar" size={20} color="#FFFFFF" />
           <Text style={styles.tabText}>Schedule</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabItem}>
+        <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('Telematics')}>
+          <Icon name="dashboard" size={20} color="#FFFFFF" />
           <Text style={styles.tabText}>Telematics</Text>
         </TouchableOpacity>
       </View>
@@ -65,6 +80,24 @@ export default function MyGarageScreen() {
 }
 
 const styles = StyleSheet.create({
+  tabBar: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#1F1F1F',
+    padding: 8,
+  },
+  tabItem: {
+    alignItems: 'center',
+  },
+  tabText: {
+    color: 'white',
+    fontSize: 12, // Adjust font size for readability
+    marginTop: 4, // Space between icon and text
+  },
   container: {
     flex: 1,
     backgroundColor: '#242526',
@@ -81,6 +114,10 @@ const styles = StyleSheet.create({
     color: '#636464',
     fontSize: 18,
     marginBottom: 16,
+  },
+  settingsButton: {
+    marginTop: 130,
+    marginRight: 10,
   },
 
   carContainer: {
@@ -142,7 +179,7 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   addButton: {
-    marginVertical: 16,
+    marginVertical: 5,
     padding: 20,
     backgroundColor: '#313233',
     borderRadius: 10,
