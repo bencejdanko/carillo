@@ -32,3 +32,10 @@
 4. Download the Expo Go app on your phone
 
 5. Scan the QR code on the screen with your camera
+
+## Web
+
+1. `cd dev`
+2. Install NodeJS
+3. run `npm i`
+4. `npm run dev`
