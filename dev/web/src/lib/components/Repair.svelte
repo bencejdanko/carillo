@@ -43,7 +43,7 @@
 
             <Card.Root class="m-4">
                 <Card.Header>
-                    <Card.Title>MIP Inspection</Card.Title>
+                    <Card.Title>MPI Inspection</Card.Title>
                 </Card.Header>
 
                 <Table.Root>
