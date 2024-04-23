@@ -20,7 +20,7 @@
 <main>
     <Nav />
 
-    <Tabs.Root value="parts" class="w-screen">
+    <Tabs.Root value="repair" class="w-screen">
         <Tabs.List class="m-2">
             <Tabs.Trigger value="repair">Repair Order</Tabs.Trigger>
             <Tabs.Trigger value="customer">Customer Info</Tabs.Trigger>
@@ -28,6 +28,8 @@
                 >Vehicle & Parts Information</Tabs.Trigger
             >
             <Tabs.Trigger value="assistant">Digital Assistant</Tabs.Trigger>
+            <Tabs.Trigger value="resource">Resources</Tabs.Trigger>
+            <Tabs.Trigger value="alldata">AllData</Tabs.Trigger>
             <Tabs.Trigger value="chat">Chat</Tabs.Trigger>
         </Tabs.List>
 
@@ -45,6 +47,16 @@
 
         <Tabs.Content value="repair">
             <Repair />
+        </Tabs.Content>
+
+        <Tabs.Content value="alldata">
+            <!--  -->
+            hello
+        </Tabs.Content>
+
+        <Tabs.Content value="resource">
+            <!-- Manuals TIS login / techstream -->
+            hello
         </Tabs.Content>
 
         <Tabs.Content value="chat">testing</Tabs.Content>
