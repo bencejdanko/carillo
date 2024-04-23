@@ -7,6 +7,7 @@ import Schedule from './Screens/Schedule';
 import CarDetails from './Screens/CarDetail';
 import PocketBase from 'pocketbase';
 import ServiceSummary from './Screens/ServiceSummary';
+import Telematics from './Screens/Telematics';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +48,7 @@ export default function App() {
         <Stack.Screen name="CarDetails" component={CarDetails} />
         <Stack.Screen name="ServiceSummary" component={ServiceSummary} />
         <Stack.Screen name="Schedule" component={Schedule} />
+        <Stack.Screen name="Telematics" component={Telematics} />
       </Stack.Navigator>
     </NavigationContainer>
   );

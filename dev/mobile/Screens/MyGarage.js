@@ -58,10 +58,6 @@ export default function MyGarageScreen() {
           <Icon name="car" size={20} color="#FFFFFF" />
           <Text style={styles.tabText}>MyGarage</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('CarDetails')}>
-          <Icon name="list-alt" size={20} color="#FFFFFF" />
-          <Text style={styles.tabText}>Details</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('ServiceSummary')}>
           <Icon name="history" size={20} color="#FFFFFF" />
           <Text style={styles.tabText}>History</Text>
@@ -95,8 +91,8 @@ const styles = StyleSheet.create({
   },
   tabText: {
     color: 'white',
-    fontSize: 12, // Adjust font size for readability
-    marginTop: 4, // Space between icon and text
+    fontSize: 12,
+    marginTop: 4,
   },
   container: {
     flex: 1,

@@ -49,6 +49,18 @@ export default function CarDetailsScreen() {
               <Text style={styles.detailLabel}>VIN:</Text>
               <Text style={styles.detailValue}>{carDetails.vin}</Text>
             </View>
+            <View style={styles.detailItem}>
+              <Text style={styles.detailLabel}>Model:</Text>
+              <Text style={styles.detailValue}>Porsche 911 GT3 R</Text>
+            </View>
+            <View style={styles.detailItem}>
+              <Text style={styles.detailLabel}>Make:</Text>
+              <Text style={styles.detailValue}>Porsche</Text>
+            </View>
+            <View style={styles.detailItem}>
+              <Text style={styles.detailLabel}>Year:</Text>
+              <Text style={styles.detailValue}>2023</Text>
+            </View>
           </View>
 
           <View style={styles.dealershipGroup}>
@@ -71,10 +83,10 @@ export default function CarDetailsScreen() {
             <Text style={styles.infoTitle}>Car Information</Text>
             <View style={styles.infoButtonGroup}>
               <TouchableOpacity style={styles.infoButton}>
-                <Text style={styles.infoButtonText}>mpg</Text>
+                <Text style={styles.infoButtonText}>MPG: 25</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.infoButton}>
-                <Text style={styles.infoButtonText}>range</Text>
+                <Text style={styles.infoButtonText}>Range: 250 miles</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -83,13 +95,16 @@ export default function CarDetailsScreen() {
             <Text style={styles.photosTitle}>Photos</Text>
             <View style={styles.photosContainer}>
               <TouchableOpacity style={styles.photoButton}>
+              <Icon name="camera" size={20} color="#FFFFFF" />
                 <Text style={styles.photoButtonText}>Windshield</Text>
               </TouchableOpacity>
               
               <TouchableOpacity style={styles.photoButton}>
+              <Icon name="camera" size={20} color="#FFFFFF" />
                 <Text style={styles.photoButtonText}>Bumper</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.photoButton}>
+              <Icon name="camera" size={20} color="#FFFFFF" />
                 <Text style={styles.photoButtonText}>Damage</Text>
               </TouchableOpacity>
             </View>
@@ -248,6 +263,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#505050',
     padding: 10,
     borderRadius: 5,
+    alignItems: 'center', // Vertically align icon and text
   },
   photoButtonText: {
     color: 'white',

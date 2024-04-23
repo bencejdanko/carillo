@@ -4,7 +4,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 import MyGarage from './MyGarage';
-export default function CarDetailsScreen() {
+export default function Schedule() {
     const navigation = useNavigation();
     const [open, setOpen] = useState(false);
     const [openForm, setOpenForm] = useState(false);
@@ -141,10 +141,6 @@ export default function CarDetailsScreen() {
                 <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('MyGarage')}>
                     <Icon name="car" size={20} color="#FFFFFF" />
                     <Text style={styles.tabText}>MyGarage</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('CarDetails')}>
-                    <Icon name="list-alt" size={20} color="#FFFFFF" />
-                    <Text style={styles.tabText}>Details</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('ServiceSummary')}>
                     <Icon name="history" size={20} color="#FFFFFF" />
