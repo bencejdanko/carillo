@@ -193,7 +193,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: '#1F1F1F',
-    padding: 8,
+    padding: 18,
+    paddingBottom: 23,
   },
   tabItem: {
     alignItems: 'center',
