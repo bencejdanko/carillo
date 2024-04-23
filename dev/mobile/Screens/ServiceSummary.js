@@ -12,7 +12,7 @@ export default function ServiceSummary() {
   const [value, setValue] = useState('porsche_911_gt3r');
   const [items, setItems] = useState([
     { label: 'Porsche 911 GT3R', value: 'porsche_911_gt3r' },
-    { label: '2012 Honda Accord EX', value: 'porsche_911_gt3r' },
+    { label: '2012 Honda Accord EX', value: 'honda_accord_ex' },
   ]);
   const [form, setForm] = useState('service_form');
   const [forms, setForms] = useState([
@@ -70,10 +70,12 @@ export default function ServiceSummary() {
             </View>
             <View style={styles.actionButtons}>
                 <TouchableOpacity style={styles.actionButton}>
-                  <Text style={styles.buttonText}>Details</Text>
+                <Icon name="info-circle" size={18} color="#FFFFFF" />
+                  <Text style={styles.buttonText}>  Details</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.actionButton}>
-                  <Text style={styles.buttonText}>Request Chat</Text>
+                <Icon name="comment" size={18} color="#FFFFFF" />
+                  <Text style={styles.buttonText}>  Request Chat</Text>
                 </TouchableOpacity>
                 </View>
             </View>
@@ -93,10 +95,12 @@ export default function ServiceSummary() {
             </View>
             <View style={styles.actionButtons}>
                 <TouchableOpacity style={styles.actionButton}>
-                  <Text style={styles.buttonText}>Details</Text>
+                  <Icon name="info-circle" size={18} color="#FFFFFF" />
+                  <Text style={styles.buttonText}>  Details</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.actionButton}>
-                  <Text style={styles.buttonText}>Feedback</Text>
+                <Icon name="comment" size={18} color="#FFFFFF" />
+                  <Text style={styles.buttonText}>  Feedback</Text>
                 </TouchableOpacity>
                 </View>
             </View>
@@ -177,6 +181,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   actionButton: {
+    flexDirection: 'row',
     marginLeft: 10,
     backgroundColor: '#313233',
     padding: 10,
@@ -197,7 +202,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     backgroundColor: '#1F1F1F',
-    padding: 8,
+    padding: 18,
+    paddingBottom: 23,
   },
   tabItem: {
     alignItems: 'center',
@@ -316,7 +322,8 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   dropdownArrow: {
-    tintColor: 'white',
+    tintColor: 'black',
+    color: 'whtie',
   },
   container: {
     flex: 1,
