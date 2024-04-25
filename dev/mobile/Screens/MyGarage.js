@@ -2,8 +2,6 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Schedule from './Schedule';
-
 
 export default function MyGarageScreen() {
   const navigation = useNavigation(); 
@@ -11,7 +9,7 @@ export default function MyGarageScreen() {
     {
       id: 1,
       name: '2023 Porsche 911 GT3R',
-      mileage: '60000',
+      mileage: '6000',
       image: require('../assets/car.jpg'),
     },
     {
@@ -42,7 +40,8 @@ export default function MyGarageScreen() {
               <TouchableOpacity
                 style={styles.settingsButton}
                 onPress={() => navigation.navigate('CarDetails')}>
-                <Icon name="cog" size={24} color="#FFFFFF" />
+                 <Icon name="info-circle" size={18} color="lightgray" />
+                <Text style={styles.settingText}>Details</Text> 
               </TouchableOpacity>
             </View>
           ))}
@@ -82,21 +81,21 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     backgroundColor: '#1F1F1F',
-    padding: 8,
+    padding: 18,
+    paddingBottom: 23,
   },
   tabItem: {
     alignItems: 'center',
   },
   tabText: {
     color: 'white',
-    fontSize: 12,
-    marginTop: 4,
   },
   container: {
     flex: 1,
     backgroundColor: '#242526',
+    paddingTop: 40,
   },
   content: {
     padding: 16,
@@ -113,7 +112,15 @@ const styles = StyleSheet.create({
   },
   settingsButton: {
     marginTop: 130,
-    marginRight: 10,
+    marginRight: 20,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  settingText: {
+    marginLeft: 5,
+    color: 'lightgray',
+    fontSize: 16,
   },
 
   carContainer: {
@@ -135,9 +142,10 @@ const styles = StyleSheet.create({
     flex: 2,
     flexDirection: 'column',
     alignItems: 'flex-start',
-    paddingLeft: 20,
+    paddingLeft: 10,
     paddingTop: 10,
     marginRight: 5,
+    minWidth: 90,
   },
 
   carImage: {
@@ -148,7 +156,7 @@ const styles = StyleSheet.create({
   },
 
   carName: {
-    color: '#636464',
+    color: 'lightgray',
     fontSize: 15,
     fontWeight: 'bold',
     paddingTop: 12,
@@ -157,21 +165,19 @@ const styles = StyleSheet.create({
 
   mileageContainer: {
     flexDirection: 'column',
-    justifyContent: 'left', 
+    justifyContent: 'top', 
     flex: 1,
-    marginLeft: 20,
+    marginLeft: 10,
   },
 
   mileageLabel: {
     color: '#636464',
     fontSize: 14,
-    marginTop: 20,
   },
   mileage: {
     color: '#50FA7B',
     fontSize: 16, 
     fontWeight: 'bold',
-    flex: true,
     marginTop: 5
   },
   addButton: {
@@ -184,22 +190,5 @@ const styles = StyleSheet.create({
   addButtonText: {
     color: 'white',
     fontSize: 24,
-  },
-  tabBar: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: '#1F1F1F',
-    padding: 18,
-    paddingBottom: 23,
-  },
-  tabItem: {
-    alignItems: 'center',
-  },
-  tabText: {
-    color: 'white',
   },
 });
