@@ -7,8 +7,8 @@ export default function CarDetailsScreen() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('porsche_911_gt3r');
   const [items, setItems] = useState([
-    {label: 'Porsche 911 GT3R', value: 'porsche_911_gt3r'},
-    {label: 'Porsche 911 GT3R', value: 'porsche_911_gt3r'},
+    { label: 'Porsche 911 GT3R', value: 'porsche_911_gt3r' },
+    { label: 'Honda Accord Ex', value: 'honda_accord_ex' },
   ]);
   const carDetails = {
     license: 'CALIGT3R',
@@ -21,25 +21,25 @@ export default function CarDetailsScreen() {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-    <View style={styles.content}>
-        <View style={styles.dropdownContainer}>
-        <Image source={require('../assets/car.jpg')} style={styles.carImage} />
-        <DropDownPicker
-          open={open}
-          value={value}
-          items={items}
-          setOpen={setOpen}
-          setValue={setValue}
-          setItems={setItems}
-          style={styles.dropdown}
-          dropDownContainerStyle={styles.dropdownBox}
-          labelStyle={styles.dropdownLabel}
-          textStyle={styles.dropdownText}
-          arrowStyle={styles.dropdownArrow}
-        />
-      </View>
-          
-           <View style={styles.detailGroup}>
+        <View style={styles.content}>
+          <View style={styles.dropdownContainer}>
+            <Image source={require('../assets/car.jpg')} style={styles.carImage} />
+            <DropDownPicker
+              open={open}
+              value={value}
+              items={items}
+              setOpen={setOpen}
+              setValue={setValue}
+              setItems={setItems}
+              style={styles.dropdown}
+              dropDownContainerStyle={styles.dropdownBox}
+              labelStyle={styles.dropdownLabel}
+              textStyle={styles.dropdownText}
+              arrowStyle={styles.dropdownArrow}
+            />
+          </View>
+
+          <View style={styles.detailGroup}>
             <Text style={styles.detailTitle}>Details</Text>
             <View style={styles.detailItem}>
               <Text style={styles.detailLabel}>LIC:</Text>
@@ -49,32 +49,44 @@ export default function CarDetailsScreen() {
               <Text style={styles.detailLabel}>VIN:</Text>
               <Text style={styles.detailValue}>{carDetails.vin}</Text>
             </View>
+            <View style={styles.detailItem}>
+              <Text style={styles.detailLabel}>Model:</Text>
+              <Text style={styles.detailValue}>Porsche 911 GT3 R</Text>
+            </View>
+            <View style={styles.detailItem}>
+              <Text style={styles.detailLabel}>Make:</Text>
+              <Text style={styles.detailValue}>Porsche</Text>
+            </View>
+            <View style={styles.detailItem}>
+              <Text style={styles.detailLabel}>Year:</Text>
+              <Text style={styles.detailValue}>2023</Text>
+            </View>
           </View>
 
           <View style={styles.dealershipGroup}>
             <Text style={styles.dealershipTitle}>Connect</Text>
-            
+
             {carDetails.dealerships.map((dealership, index) => (
               <TouchableOpacity key={index} style={styles.dealershipButton}>
                 <Text style={styles.dealershipButtonText}>{dealership}</Text>
               </TouchableOpacity>
-              
+
             ))}
             <TouchableOpacity style={styles.dealershipButton}>
-            <TouchableOpacity style={styles.addButton}>
-            <Icon name="plus" size={12} color="#FFFFFF" />
-          </TouchableOpacity>
+              <TouchableOpacity style={styles.addButton}>
+                <Icon name="plus" size={12} color="#FFFFFF" />
               </TouchableOpacity>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.infoGroup}>
             <Text style={styles.infoTitle}>Car Information</Text>
             <View style={styles.infoButtonGroup}>
               <TouchableOpacity style={styles.infoButton}>
-                <Text style={styles.infoButtonText}>mpg</Text>
+                <Text style={styles.infoButtonText}>MPG: 25</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.infoButton}>
-                <Text style={styles.infoButtonText}>range</Text>
+                <Text style={styles.infoButtonText}>Range: 250 miles</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -83,13 +95,16 @@ export default function CarDetailsScreen() {
             <Text style={styles.photosTitle}>Photos</Text>
             <View style={styles.photosContainer}>
               <TouchableOpacity style={styles.photoButton}>
+                <Icon name="camera" size={20} color="#FFFFFF" />
                 <Text style={styles.photoButtonText}>Windshield</Text>
               </TouchableOpacity>
-              
+
               <TouchableOpacity style={styles.photoButton}>
+                <Icon name="camera" size={20} color="#FFFFFF" />
                 <Text style={styles.photoButtonText}>Bumper</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.photoButton}>
+                <Icon name="camera" size={20} color="#FFFFFF" />
                 <Text style={styles.photoButtonText}>Damage</Text>
               </TouchableOpacity>
             </View>
@@ -105,41 +120,45 @@ export default function CarDetailsScreen() {
 }
 const styles = StyleSheet.create({
 
-    dropdownContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#313233',
-      paddingHorizontal: 16,
-      paddingVertical: 8,
-      marginBottom: 10,
-      borderRadius: 5,
-      zIndex: 1000,
-    },
-    carImage: {
-      width: 80, 
-      height: 50,
-      marginRight: 10,
-    },
-    scrollViewContainer: {
-      paddingBottom: 200,
-    },
-    dropdown: {
-      backgroundColor: 'transparent',
-      borderWidth: 0,
-    },
-    dropdownBox: {
-      backgroundColor: '#313233',
-      borderColor: 'transparent',
-    },
-    dropdownLabel: {
-      color: 'white',
-    },
-    dropdownText: {
-      color: 'white',
-    },
-    dropdownArrow: {
-      tintColor: 'white',
-    },
+
+  dropdownContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#313233',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    marginBottom: 10,
+    borderRadius: 5,
+    zIndex: 1000,
+  },
+  carImage: {
+    width: 80,
+    height: 50,
+    marginRight: 10,
+  },
+  scrollViewContainer: {
+    paddingBottom: 200,
+  },
+  dropdown: {
+    backgroundColor: 'transparent',
+    borderWidth: 0,
+    width: '75%',
+  },
+  dropdownBox: {
+    backgroundColor: '#313233',
+    borderColor: 'transparent',
+  },
+  dropdownLabel: {
+    color: 'white',
+  },
+  dropdownText: {
+    color: 'white',
+    
+  },
+  dropdownArrow: {
+    tintColor: 'white',
+    color: 'white',
+  },
   container: {
     flex: 1,
     backgroundColor: '#242526',
@@ -227,7 +246,7 @@ const styles = StyleSheet.create({
   infoButtonText: {
     color: 'white',
     fontSize: 14,
-  },  
+  },
   photosGroup: {
     backgroundColor: '#313233',
     padding: 10,
@@ -248,6 +267,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#505050',
     padding: 10,
     borderRadius: 5,
+    alignItems: 'center',
   },
   photoButtonText: {
     color: 'white',

@@ -4,7 +4,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 import MyGarage from './MyGarage';
-export default function CarDetailsScreen() {
+export default function Schedule() {
     const navigation = useNavigation();
     const [open, setOpen] = useState(false);
     const [openForm, setOpenForm] = useState(false);
@@ -12,20 +12,20 @@ export default function CarDetailsScreen() {
     const [value, setValue] = useState('porsche_911_gt3r');
     const [items, setItems] = useState([
         { label: 'Porsche 911 GT3R', value: 'porsche_911_gt3r' },
-        { label: '2012 Honda Accord EX', value: 'porsche_911_gt3r' },
+        { label: '2012 Honda Accord EX', value: 'honda_accord_ex' },
     ]);
     const [form, setForm] = useState('service_form');
     const [forms, setForms] = useState([
-        { label: 'Service Form #2', value: 'service_form' },
-        { label: 'Service Form #1', value: 'service_form' },
+        { label: 'Service Form #2', value: 'service_form2' },
+        { label: 'Service Form #1', value: 'service_form1' },
     ]);
     const [service, setService] = useState('service_type');
     const [services, setServices] = useState([
-        { label: 'Select Service', value: 'service_type' },
-        { label: 'Oil change', value: 'service_type' },
-        { label: 'Brake check', value: 'service_type' },
-        { label: 'Routine check', value: 'service_type' },
-        { label: 'Other', value: 'service_type' },
+        { label: 'Select Service', value: 'service_type1' },
+        { label: 'Oil change', value: 'service_type2' },
+        { label: 'Brake check', value: 'service_type3' },
+        { label: 'Routine check', value: 'service_type4' },
+        { label: 'Other', value: 'service_type5' },
     ]);
 
     const [selectedCar, setSelectedCar] = useState('Porsche 911 GT3R');
@@ -60,7 +60,7 @@ export default function CarDetailsScreen() {
                             setOpen={setOpenForm}
                             setValue={setForm}
                             setItems={setForms}
-                            style={styles.dropdown}
+                            style={styles.formDropdownContainer}
                             dropDownContainerStyle={styles.dropdownBox}
                             labelStyle={styles.dropdownLabel}
                             textStyle={styles.dropdownText}
@@ -71,14 +71,17 @@ export default function CarDetailsScreen() {
                         <Text style={styles.detailTitle}>Optional Upload</Text>
                         <View style={styles.photosContainer}>
                             <TouchableOpacity style={styles.photoButton}>
-                                <Text style={styles.photoButtonText}>Camera</Text>
+                            <Icon name="camera" size={20} color="#FFFFFF" />
+                                <Text style={styles.photoButtonText}> Camera</Text>
                             </TouchableOpacity>
 
                             <TouchableOpacity style={styles.photoButton}>
-                                <Text style={styles.photoButtonText}>Photos</Text>
+                            <Icon name="camera" size={20} color="#FFFFFF" />
+                                <Text style={styles.photoButtonText}> Photos</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.photoButton}>
-                                <Text style={styles.photoButtonText}>Scan</Text>
+                            <Icon name="camera" size={20} color="#FFFFFF" />
+                                <Text style={styles.photoButtonText}> Scan</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -94,7 +97,7 @@ export default function CarDetailsScreen() {
                                 setOpen={setOpenService}
                                 setValue={setService}
                                 setItems={setService}
-                                style={styles.dropdown}
+                                style={styles.serviceDropdownContainer}
                                 dropDownContainerStyle={styles.serviceDropdownContainer}
                                 labelStyle={styles.dropdownLabel}
                                 textStyle={styles.dropdownText}
@@ -142,10 +145,6 @@ export default function CarDetailsScreen() {
                     <Icon name="car" size={20} color="#FFFFFF" />
                     <Text style={styles.tabText}>MyGarage</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('CarDetails')}>
-                    <Icon name="list-alt" size={20} color="#FFFFFF" />
-                    <Text style={styles.tabText}>Details</Text>
-                </TouchableOpacity>
                 <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('ServiceSummary')}>
                     <Icon name="history" size={20} color="#FFFFFF" />
                     <Text style={styles.tabText}>History</Text>
@@ -171,7 +170,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         backgroundColor: '#1F1F1F',
-        padding: 8,
+        padding: 18,
+        paddingBottom: 23,
     },
     tabItem: {
         alignItems: 'center',
@@ -241,11 +241,39 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#313233',
+        paddingHorizontal: 16,
         paddingVertical: 8,
         marginBottom: 10,
         borderRadius: 5,
-        zIndex: 2000,
-    },
+        zIndex: 3000,
+      },
+      carImage: {
+        width: 80,
+        height: 50,
+        marginRight: 10,
+      },
+      scrollViewContainer: {
+        paddingBottom: 200,
+      },
+      dropdown: {
+        backgroundColor: 'transparent',
+        borderWidth: 0,
+        width: '75%',
+      },
+      dropdownBox: {
+        backgroundColor: '#313233',
+        borderColor: 'transparent',
+      },
+      dropdownLabel: {
+        color: 'white',
+      },
+      dropdownText: {
+        color: 'white',
+      },
+      dropdownArrow: {
+        tintColor: 'white',
+        color: 'white',
+      },
     formDropdownContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -266,31 +294,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         zIndex: 2000,
         borderColor: 'RED',
-    },
-    carImage: {
-        width: 80,
-        height: 50,
-        marginRight: 10,
-    },
-    scrollViewContainer: {
-        paddingBottom: 200,
-    },
-    dropdown: {
-        backgroundColor: 'transparent',
-        borderWidth: 0,
-    },
-    dropdownBox: {
-        backgroundColor: '#313233',
-        borderColor: 'transparent',
-    },
-    dropdownLabel: {
-        color: 'white',
-    },
-    dropdownText: {
-        color: 'white',
-    },
-    dropdownArrow: {
-        tintColor: 'white',
     },
     container: {
         flex: 1,
@@ -398,9 +401,11 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
     photoButton: {
+        flexDirection: 'row',
         backgroundColor: '#505050',
         padding: 10,
         borderRadius: 5,
+        alignItems: 'center',
     },
     photoButtonText: {
         color: 'white',
