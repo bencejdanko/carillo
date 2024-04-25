@@ -3,8 +3,11 @@ import { View, Image, Text, TouchableOpacity, ScrollView, StyleSheet, TextInput 
 import DropDownPicker from 'react-native-dropdown-picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
+import { LogBox } from 'react-native';
 import MyGarage from './MyGarage';
+import Dealership from './Dealership';
 export default function Schedule() {
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
     const navigation = useNavigation();
     const [open, setOpen] = useState(false);
     const [openForm, setOpenForm] = useState(false);
@@ -71,17 +74,17 @@ export default function Schedule() {
                         <Text style={styles.detailTitle}>Optional Upload</Text>
                         <View style={styles.photosContainer}>
                             <TouchableOpacity style={styles.photoButton}>
-                            <Icon name="camera" size={20} color="#FFFFFF" />
-                                <Text style={styles.photoButtonText}> Camera</Text>
+                                <Icon name="camera" size={20} color="#FFFFFF" />
+                                <Text style={styles.photoButtonText}>  Camera</Text>
                             </TouchableOpacity>
 
                             <TouchableOpacity style={styles.photoButton}>
-                            <Icon name="camera" size={20} color="#FFFFFF" />
-                                <Text style={styles.photoButtonText}> Photos</Text>
+                                <Icon name="file-image-o" size={20} color="#FFFFFF" />
+                                <Text style={styles.photoButtonText}>  Photos</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.photoButton}>
-                            <Icon name="camera" size={20} color="#FFFFFF" />
-                                <Text style={styles.photoButtonText}> Scan</Text>
+                                <Icon name="barcode" size={20} color="#FFFFFF" />
+                                <Text style={styles.photoButtonText}>  Scan</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -133,8 +136,8 @@ export default function Schedule() {
                             placeholderTextColor="#313233"
                         />
                     </View>
-                    <TouchableOpacity style={styles.connectButton}>
-                        <Text style={styles.connectText}>Connect with dealerships</Text>
+                    <TouchableOpacity style={styles.connectButton} onPress={() => navigation.navigate('Dealership')}>
+                        <Text style={styles.connectText}>Connect with dealership</Text>
                     </TouchableOpacity>
 
                 </View>
@@ -168,7 +171,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         backgroundColor: '#1F1F1F',
         padding: 18,
         paddingBottom: 23,
@@ -178,8 +181,6 @@ const styles = StyleSheet.create({
     },
     tabText: {
         color: 'white',
-        fontSize: 12,
-        marginTop: 4,
     },
     addService: {
         backgroundColor: '#505050',
@@ -205,7 +206,8 @@ const styles = StyleSheet.create({
     },
     connectText: {
         color: '#FFFFFF',
-        fontSize: 20,
+        fontSize: 18,
+        fontWeight: 'bold',
     },
     connectButton: {
         backgroundColor: '#FF5555',
@@ -246,34 +248,36 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderRadius: 5,
         zIndex: 3000,
-      },
-      carImage: {
+    },
+    carImage: {
         width: 80,
         height: 50,
         marginRight: 10,
-      },
-      scrollViewContainer: {
-        paddingBottom: 200,
-      },
-      dropdown: {
+        borderRadius: 5,
+    },
+    scrollViewContainer: {
+        paddingBottom: 80,
+        paddingTop: 35,
+    },
+    dropdown: {
         backgroundColor: 'transparent',
         borderWidth: 0,
         width: '75%',
-      },
-      dropdownBox: {
+    },
+    dropdownBox: {
         backgroundColor: '#313233',
         borderColor: 'transparent',
-      },
-      dropdownLabel: {
+    },
+    dropdownLabel: {
         color: 'white',
-      },
-      dropdownText: {
+    },
+    dropdownText: {
         color: 'white',
-      },
-      dropdownArrow: {
+    },
+    dropdownArrow: {
         tintColor: 'white',
         color: 'white',
-      },
+    },
     formDropdownContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -282,6 +286,7 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         marginBottom: 10,
         borderRadius: 5,
+        borderWidth: 0,
         zIndex: 1000,
     },
     serviceDropdownContainer: {
@@ -292,8 +297,8 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         marginBottom: 10,
         borderRadius: 5,
+        borderWidth: 0,
         zIndex: 2000,
-        borderColor: 'RED',
     },
     container: {
         flex: 1,
@@ -410,11 +415,5 @@ const styles = StyleSheet.create({
     photoButtonText: {
         color: 'white',
         fontSize: 14,
-    },
-    tabBar: {
-        backgroundColor: '#1F1F1F',
-        padding: 10,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
     },
 });

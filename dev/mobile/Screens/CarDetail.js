@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { View, Image, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { useNavigation } from '@react-navigation/native';
+import { LogBox } from 'react-native';
 export default function CarDetailsScreen() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('porsche_911_gt3r');
@@ -15,11 +16,19 @@ export default function CarDetailsScreen() {
     vin: 'WP0ZZZ99ZYS692067',
     dealerships: ['Toyota Fremont', 'Honda Fremont'],
   };
+  navigation = useNavigation();
 
   const [selectedCar, setSelectedCar] = useState('Porsche 911 GT3R');
+  LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+          <Icon name="angle-left" size={26} color="white" />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Car Details</Text>
+      </View>
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
         <View style={styles.content}>
           <View style={styles.dropdownContainer}>
@@ -120,7 +129,21 @@ export default function CarDetailsScreen() {
 }
 const styles = StyleSheet.create({
 
-
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#313233',
+    paddingTop: 40,
+  },
+  backButton: {
+    padding: 8,
+  },
+  headerTitle: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
   dropdownContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -135,6 +158,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 50,
     marginRight: 10,
+    borderRadius: 5,
   },
   scrollViewContainer: {
     paddingBottom: 200,
@@ -153,12 +177,12 @@ const styles = StyleSheet.create({
   },
   dropdownText: {
     color: 'white',
-    
   },
   dropdownArrow: {
     tintColor: 'white',
     color: 'white',
   },
+
   container: {
     flex: 1,
     backgroundColor: '#242526',
@@ -170,7 +194,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 20,
   },
   detailGroup: {
     backgroundColor: '#313233',

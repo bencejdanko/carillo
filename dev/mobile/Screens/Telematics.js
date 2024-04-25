@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#242526',
         padding: 16,
+        paddingTop: 50,
       },
       sectionTitle: {
         color: '#FF5555',
