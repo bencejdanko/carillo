@@ -3,6 +3,9 @@
     import * as Table from "$lib/components/ui/table";
     import * as ToggleGroup from "$lib/components/ui/toggle-group";
     import { Progress } from "$lib/components/ui/progress";
+
+    import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+    
 </script>
 
 <main>
