@@ -4,15 +4,36 @@
     text-align: left;
 }
 
+.shadow {
+    box-sizing: border-box;
+    box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3), inset 0 -2px 6px 0 rgba(10, 37, 64, 0.35);
+    border-radius: 5px;
+    width: 500px;
+    height: 340px;
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0;
+    height: calc(30% + 10px);
+    width: calc(100% - 20px);
+    clip-path: polygon(100% 0%, 0% 100%, 0% 0%);
+    background: linear-gradient(to bottom, #069e78, green);
+}
+
+@media (min-width: 768px) {
+    .triangle {
+        width: calc(50% - 20px);
+    }
+}
+
 /* Background Gradient */
 .gradient-background {
     background: linear-gradient(90deg,
 
-            #069e78,
-            #067928,
-            #0c7386,
-            #55c280,
-            #209e3b);
+            white,
+            #8BE9FD,
+            #deb887);
 
             /* #4169e1,
             #5768df,
