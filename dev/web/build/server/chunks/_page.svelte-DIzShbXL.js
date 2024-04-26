@@ -570,7 +570,7 @@ const Carousel_next = create_ssr_component(($$result, $$props, $$bindings, slots
   )}`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<link rel="stylesheet" href="styles.css"> <main><div class="absolute top-0 left-0 md:w-[50%] w-[100%] h-[70%] bg-gradient-to-b from-green-500 to-[#069e78] rounded-br-[50px]"></div> <div class="triangle bg-gray-200"></div> <div class="z-10 relative">${validate_component(IndexNav, "IndexNav").$$render($$result, {}, {}, {})} <div class="grid frid-cols-1 md:grid-cols-2" data-svelte-h="svelte-3uy666"><div><div class="gradient-background"><h2 class="text-5xl p-10">Driving Efficiency<br>
+  return `<main><div class="absolute top-0 left-0 md:w-[50%] w-[100%] h-[70%] bg-gradient-to-b from-green-500 to-[#069e78] rounded-br-[50px]"></div> <div class="triangle bg-gray-200"></div> <div class="z-10 relative">${validate_component(IndexNav, "IndexNav").$$render($$result, {}, {}, {})} <div class="grid frid-cols-1 md:grid-cols-2" data-svelte-h="svelte-3uy666"><div><div class="gradient-background"><h2 class="text-5xl p-10">Driving Efficiency<br>
                         Powering Performance<br>
                         Your Dealership&#39;s Ultimate Service Solution</h2></div> <h2 class="text hidden lg:flex lg:text-xl font-medium text-white p-5 ">One simple login for your entire service pipeline. Car-Rillo
                     is poised to revolutionize the way automotive dealerships
@@ -707,4 +707,4 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 
 export { Page as default };
-//# sourceMappingURL=_page.svelte-CjBwr-va.js.map
+//# sourceMappingURL=_page.svelte-DIzShbXL.js.map

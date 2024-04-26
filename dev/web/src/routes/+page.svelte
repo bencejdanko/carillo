@@ -16,8 +16,6 @@
     import { Video } from "svelte-radix";
 </script>
 
-<link rel="stylesheet" href="styles.css" />
-
 <main>
     <div
         class="absolute top-0 left-0 md:w-[50%] w-[100%] h-[70%] bg-gradient-to-b from-green-500 to-[#069e78] rounded-br-[50px]"
