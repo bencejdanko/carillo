@@ -1,3 +1,7 @@
+# Dealership CMS (Abandoned)
+This repository contains an ambitious but ultimately abandoned project: a web-based car dealership management system (CMS). Developed as part of the Zinnstarter program at San Jose State University (SJSU). It was an experimental attempt at implementing modern web technologies and frameworks. First designing in Figma, we explored Svelte, SvelteKit, React Native with Expo, and PocketBase.
+
+While this project never reached production, it remains an artifact of our startup experience, culminating in meeting Ray Zinn. Feel free to explore, cringe, and perhaps even find some inspiration in our missteps!
 
 # Setup Instructions
 
